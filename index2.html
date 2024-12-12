@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajas con Prioridad</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Roboto';
+        }
+        .priority-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            height: 200px;
+            border-radius: 10px;
+        }
+        .priority-box h1 {
+            font-size: 8rem;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .priority-box p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Alarmas:</h1>
+    <br>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="priority-box" style="background-color: #F15252;">
+                <h1>1</h1>
+                <p>Prioridad alta</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="priority-box" style="background-color: #F1F152;">
+                <h1>2</h1>
+                <p>Prioridad media</p>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <div class="priority-box" style="background-color: #52F175;">
+                <h1>3</h1>
+                <p>Prioridad baja</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+    <div class="container">
+        <table class="table table-hover ">
+            <thead>
+              <tr>
+                <th scope="col">ID EXP</th>
+                <th scope="col">MOTIVO</th>
+                <th scope="col">ESTADO ACTUAL</th>
+                <th scope="col">RESPONSABLE</th>
+                <th scope="col">FECHA LIMITE</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr class="table-danger">
+                <th scope="row" >55558/24</th>
+                <td >Expediente sin movimientos por más de 20 días.</td>
+                <td>Pendiente</td>
+                <td>Arjona, Ricardo</td>
+                <td>18/12/24</td>
+              </tr>
+              <tr class="table-warning">
+                <th scope="row" >55558/24</th>
+                <td >Expediente sin movimientos por más de 20 días.</td>
+                <td>Pendiente</td>
+                <td>Arjona, Ricardo</td>
+                <td>18/12/24</td>
+              </tr>
+              <tr class="table-warning">
+                <th scope="row" >55558/24</th>
+                <td >Expediente sin movimientos por más de 20 días.</td>
+                <td>Pendiente</td>
+                <td>Arjona, Ricardo</td>
+                <td>18/12/24</td>
+              </tr>
+              <tr  class="table-success">
+                <th scope="row" >55558/24</th>
+                <td >Expediente sin movimientos por más de 20 días.</td>
+                <td>Pendiente</td>
+                <td>Arjona, Ricardo</td>
+                <td>18/12/24</td>
+              </tr>
+              <tr  class="table-success">
+                <th scope="row" >55558/24</th>
+                <td >Expediente sin movimientos por más de 20 días.</td>
+                <td>Pendiente</td>
+                <td>Arjona, Ricardo</td>
+                <td>18/12/24</td>
+              </tr>
+              <tr  class="table-success">
+                <th scope="row" >55558/24</th>
+                <td >Expediente sin movimientos por más de 20 días.</td>
+                <td>Pendiente</td>
+                <td>Arjona, Ricardo</td>
+                <td>18/12/24</td>
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

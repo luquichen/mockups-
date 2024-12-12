@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Gestión Resolución</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .header {
+            background-color: #0066ff;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .card {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .highlight {
+            color: #0066ff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .section-title {
+            grid-column: span 2;
+            background-color: #0044cc;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+        canvas {
+            width: 100% !important;
+            height: auto !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Dashboard Gestión Resolución</h1>
+    </div>
+    <div class="container">
+        <div class="section-title">Datos Destacados</div>
+        <div class="card">
+            <h3>Total Resoluciones</h3>
+            <p class="highlight">320</p>
+        </div>
+        <div class="card">
+            <h3>Pagos Realizados</h3>
+            <p class="highlight">$400,000</p>
+        </div>
+        <div class="card">
+            <h3>Alarmas Activas</h3>
+            <p class="highlight">25</p>
+        </div>
+        <div class="card">
+            <h3>Resoluciones Anuladas</h3>
+            <p class="highlight">10</p>
+        </div>
+        <div class="section-title">Gráficos</div>
+        <div class="card">
+            <h3>Resoluciones por Subcarpetas</h3>
+            <canvas id="subcarpetasResolucion"></canvas>
+        </div>
+        <div class="card">
+            <h3>Alarmas Activas</h3>
+            <canvas id="alarmasResolucion"></canvas>
+        </div>
+        <div class="card">
+            <h3>Estado de Resoluciones</h3>
+            <canvas id="estadoResoluciones"></canvas>
+        </div>
+        <div class="card">
+            <h3>Pagos Mensuales</h3>
+            <canvas id="pagosMensuales"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Gráfico Resoluciones por Subcarpetas
+        new Chart(document.getElementById('subcarpetasResolucion'), {
+            type: 'bar',
+            data: {
+                labels: ['Pendientes', 'Ingresos a Analizar', 'Apelaciones'],
+                datasets: [{
+                    label: 'Cantidad',
+                    data: [120, 50, 150],
+                    backgroundColor: ['#4caf50', '#ff9800', '#2196f3']
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Gráfico Alarmas Activas
+        new Chart(document.getElementById('alarmasResolucion'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Alarma Apelación', 'Alarma Pago', 'Alarma Pendiente'],
+                datasets: [{
+                    data: [10, 15, 5],
+                    backgroundColor: ['#f44336', '#ff9800', '#4caf50']
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // Gráfico Estado de Resoluciones
+        new Chart(document.getElementById('estadoResoluciones'), {
+            type: 'pie',
+            data: {
+                labels: ['Notificadas', 'Pagadas', 'Pendientes', 'Archivadas'],
+                datasets: [{
+                    data: [120, 100, 50, 50],
+                    backgroundColor: ['#2196f3', '#4caf50', '#ff9800', '#607d8b']
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // Gráfico Pagos Mensuales
+        new Chart(document.getElementById('pagosMensuales'), {
+            type: 'line',
+            data: {
+                labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May'],
+                datasets: [{
+                    label: 'Pagos ($)',
+                    data: [50000, 80000, 120000, 90000, 60000],
+                    borderColor: '#0066ff',
+                    fill: true,
+                    backgroundColor: 'rgba(0, 102, 255, 0.2)'
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
